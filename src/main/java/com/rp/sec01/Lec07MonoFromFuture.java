@@ -9,16 +9,15 @@ public class Lec07MonoFromFuture {
 
     public static void main(String[] args) {
 
-        Mono.fromFuture(getName())
-                .subscribe(Util.onNext());
+        // Data is coming from async
+        Mono.fromFuture(getName()).subscribe(Util.onNext());
 
-        Util.sleepSeconds(1);
-
+        Util.sleepSeconds(1); // Have to block it to get data from completable future
+        // else it runs off.
     }
 
-    private static CompletableFuture<String> getName(){
+    private static CompletableFuture<String> getName() {
         return CompletableFuture.supplyAsync(() -> Util.faker().name().fullName());
     }
-
 
 }

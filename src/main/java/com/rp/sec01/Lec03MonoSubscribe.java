@@ -6,16 +6,14 @@ import reactor.core.publisher.Mono;
 public class Lec03MonoSubscribe {
 
     public static void main(String[] args) {
+        int div = 2;
 
         // publisher
         Mono<Integer> mono = Mono.just("ball")
-                                .map(String::length)
-                                .map(l -> l / 1);
+                .map(String::length)
+                .map(len -> len / div);
 
-        // 1
-        // mono.subscribe();
-
-        // 2
+        // do task as per what happens at the publisher
         mono.subscribe(
                 Util.onNext(),
                 Util.onError(),
