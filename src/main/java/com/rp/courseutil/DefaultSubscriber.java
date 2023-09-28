@@ -3,6 +3,8 @@ package com.rp.courseutil;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
+import static com.rp.courseutil.Util.getThreadName;
+
 public class DefaultSubscriber implements Subscriber<Object> {
 
     private String name = "";
@@ -16,12 +18,12 @@ public class DefaultSubscriber implements Subscriber<Object> {
 
     @Override
     public void onSubscribe(Subscription subscription) {
-        subscription.request(Long.MAX_VALUE);
+        subscription.request(Long.MAX_VALUE); //unbounded -- give me all
     }
 
     @Override
     public void onNext(Object o) {
-        System.out.println(name + "Received : " + o);
+        System.out.println(name + "Received : " + o + " at " + getThreadName());
     }
 
     @Override
