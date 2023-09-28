@@ -1,7 +1,7 @@
 package com.rp.sec09.helper;
 
 import com.github.javafaker.Book;
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import lombok.Getter;
 import lombok.ToString;
 

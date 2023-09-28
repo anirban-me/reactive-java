@@ -1,4 +1,4 @@
-package com.rp.courseutil;
+package com.rp.util;
 
 import com.github.javafaker.Faker;
 import org.reactivestreams.Subscriber;

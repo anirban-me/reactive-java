@@ -1,6 +1,6 @@
 package com.rp.sec05;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import com.rp.sec05.assignment.InventoryService;
 import com.rp.sec05.assignment.OrderService;
 import com.rp.sec05.assignment.RevenueService;

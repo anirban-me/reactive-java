@@ -1,6 +1,6 @@
 package com.rp.sec09;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import com.rp.sec09.assignment.OrderProcessor;
 import com.rp.sec09.assignment.OrderService;
 import com.rp.sec09.assignment.PurchaseOrder;

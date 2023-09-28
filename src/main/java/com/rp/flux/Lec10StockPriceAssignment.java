@@ -1,6 +1,6 @@
-package com.rp.sec02;
+package com.rp.flux;
 
-import com.rp.sec02.assignment.StockPricePublisher;
+import com.rp.flux.assignment.StockPricePublisher;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 

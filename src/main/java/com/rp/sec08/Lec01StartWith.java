@@ -1,6 +1,6 @@
 package com.rp.sec08;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import com.rp.sec08.helper.NameGenerator;
 
 public class Lec01StartWith {

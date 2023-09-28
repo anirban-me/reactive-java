@@ -1,4 +1,4 @@
-package com.rp.sec01.assignment;
+package com.rp.mono.assignment;
 
 import reactor.core.publisher.Mono;
 

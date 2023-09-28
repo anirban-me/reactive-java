@@ -1,6 +1,6 @@
 package com.rp.sec04.helper;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import lombok.Data;
 import lombok.ToString;
 

@@ -1,6 +1,6 @@
 package com.rp.sec03;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import com.rp.sec03.assignment.FileReaderService;
 
 import java.nio.file.Path;

@@ -1,7 +1,7 @@
-package com.rp.sec02;
+package com.rp.flux;
 
-import com.rp.courseutil.Util;
-import com.rp.sec02.helper.NameGenerator;
+import com.rp.util.Util;
+import com.rp.flux.helper.NameGenerator;
 
 import java.util.List;
 

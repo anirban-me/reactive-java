@@ -1,6 +1,6 @@
 package com.rp.sec03;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import reactor.core.publisher.Flux;
 
 public class Lec05FluxGenerate {

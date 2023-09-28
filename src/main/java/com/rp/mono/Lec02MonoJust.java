@@ -1,4 +1,4 @@
-package com.rp.sec01;
+package com.rp.mono;
 
 import reactor.core.publisher.Mono;
 

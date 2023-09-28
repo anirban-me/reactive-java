@@ -1,9 +1,9 @@
-package com.rp.courseutil;
+package com.rp.util;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
-import static com.rp.courseutil.Util.getThreadName;
+import static com.rp.util.Util.getThreadName;
 
 public class DefaultSubscriber implements Subscriber<Object> {
 

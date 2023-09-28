@@ -1,6 +1,6 @@
 package com.rp.sec11;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import com.rp.sec11.assignment.SlackMember;
 import com.rp.sec11.assignment.SlackRoom;
 

@@ -1,6 +1,6 @@
-package com.rp.sec02.assignment;
+package com.rp.flux.assignment;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import reactor.core.publisher.Flux;
 
 import java.time.Duration;

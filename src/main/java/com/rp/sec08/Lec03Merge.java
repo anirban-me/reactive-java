@@ -1,6 +1,6 @@
 package com.rp.sec08;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import com.rp.sec08.helper.AmericanAirlines;
 import com.rp.sec08.helper.Emirates;
 import com.rp.sec08.helper.Qatar;

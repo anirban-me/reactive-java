@@ -1,4 +1,4 @@
-package com.rp.sec02;
+package com.rp.flux;
 
 import reactor.core.publisher.Flux;
 

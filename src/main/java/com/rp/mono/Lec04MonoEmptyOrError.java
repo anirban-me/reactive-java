@@ -1,6 +1,6 @@
-package com.rp.sec01;
+package com.rp.mono;
 
-import com.rp.courseutil.Util;
+import com.rp.util.Util;
 import reactor.core.publisher.Mono;
 
 public class Lec04MonoEmptyOrError {
