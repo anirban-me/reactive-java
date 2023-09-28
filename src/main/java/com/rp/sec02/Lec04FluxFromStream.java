@@ -13,10 +13,13 @@ public class Lec04FluxFromStream {
         List<Integer> list = List.of(1, 2, 3, 4, 5);
         Stream<Integer> stream = list.stream();
 
-       // stream.forEach(System.out::println); // closed
-       // stream.forEach(System.out::println);
+        // Stream cannot be reused after you apply the operation
+        // System.out.println("Stream print");
+        // stream.forEach(System.out::println); // stream closed
 
-        Flux<Integer> integerFlux = Flux.fromStream(() -> list.stream());
+        System.out.println("Flux print 1");
+        Flux<Integer> integerFlux = Flux.fromStream(list::stream); // convert list again to stream - build pipeline
+        // Flux<Integer> integerFlux = Flux.fromStream(stream); // stream once used, cannot be opened again
 
         integerFlux
                 .subscribe(
@@ -25,6 +28,8 @@ public class Lec04FluxFromStream {
                         Util.onComplete()
                 );
 
+        // Won't work for line 22
+        System.out.println("Flux print 2");
         integerFlux
                 .subscribe(
                         Util.onNext(),

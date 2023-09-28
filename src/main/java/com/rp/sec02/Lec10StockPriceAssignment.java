@@ -8,14 +8,18 @@ import java.time.LocalDateTime;
 import java.util.concurrent.CountDownLatch;
 
 public class Lec10StockPriceAssignment {
-
     public static void main(String[] args) throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(1); // Waiting for 1 thread
+        /*
+         * Working of CountDownLatch:
+         * When we create an object of CountDownLatch, we specify the number of threads it should wait for,
+         * all such (child) thread(s) are required to do count down by calling CountDownLatch.countDown() once they are completed or ready to the job.
+         * As soon as count reaches zero, the waiting task starts running.
+         *
+         * */
 
-        CountDownLatch latch = new CountDownLatch(1);
-
-        StockPricePublisher.getPrice()
+        StockPricePublisher.getPrice() // publisher - keeps giving the updated price
                 .subscribeWith(new Subscriber<Integer>() {
-
                     private Subscription subscription;
 
                     @Override
@@ -27,7 +31,7 @@ public class Lec10StockPriceAssignment {
                     @Override
                     public void onNext(Integer price) {
                         System.out.println(LocalDateTime.now() + " : Price : " + price);
-                        if(price > 110 || price < 90){
+                        if (price > 110 || price < 90) {
                             this.subscription.cancel();
                             latch.countDown();
                         }
@@ -44,7 +48,7 @@ public class Lec10StockPriceAssignment {
                     }
                 });
 
-        latch.await();
+        latch.await(); // the main thread is waiting on the child to do the countdown
     }
 
 

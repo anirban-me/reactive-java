@@ -9,27 +9,31 @@ public class Util {
 
     private static final Faker FAKER = Faker.instance();
 
-    public static Consumer<Object> onNext(){
-        return o -> System.out.println("Received : " + o);
+    public static Consumer<Object> onNext() {
+        return o -> System.out.println("Received : " + o + " at " + getThreadName());
     }
 
-    public static Consumer<Throwable> onError(){
+    public static Consumer<Throwable> onError() {
         return e -> System.out.println("ERROR : " + e.getMessage());
     }
 
-    public static Runnable onComplete(){
+    public static Runnable onComplete() {
         return () -> System.out.println("Completed");
     }
 
-    public static Faker faker(){
+    public static String getThreadName() {
+        return Thread.currentThread().getName();
+    }
+
+    public static Faker faker() {
         return FAKER;
     }
 
-    public static void sleepSeconds(int seconds){
+    public static void sleepSeconds(int seconds) {
         sleepMillis(seconds * 1000);
     }
 
-    public static void sleepMillis(int millis){
+    public static void sleepMillis(int millis) {
         try {
             Thread.sleep(millis);
         } catch (InterruptedException e) {
@@ -37,11 +41,11 @@ public class Util {
         }
     }
 
-    public static Subscriber<Object> subscriber(){
+    public static Subscriber<Object> subscriber() {
         return new DefaultSubscriber();
     }
 
-    public static Subscriber<Object> subscriber(String name){
+    public static Subscriber<Object> subscriber(String name) {
         return new DefaultSubscriber(name);
     }
 
