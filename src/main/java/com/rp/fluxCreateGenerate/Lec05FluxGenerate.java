@@ -7,7 +7,7 @@ public class Lec05FluxGenerate {
     public static void main(String[] args) {
 
         // creates new instance of synchronousSink
-        Flux.generate(synchronousSink -> {
+        Flux.generate(synchronousSink -> { // like an infinite loop unless complete() or error()
                     System.out.println("Emitting");
                     synchronousSink.next(Util.faker().country().name()); // synchronousSink will only emit 1 item, vs fluxSink sink can emit many
                     // generate() is responsible to invoke the Runnable again and again in a loop. complete() error() kills the loop.

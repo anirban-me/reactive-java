@@ -7,11 +7,11 @@ public class Lec02HandleAssignment {
 
     public static void main(String[] args) {
 
-        Flux.generate(synchronousSink -> synchronousSink.next(Util.faker().country().name()))
-                .map(Object::toString)
-                .handle((s, synchronousSink) -> {
-                    synchronousSink.next(s);
-                    if(s.toLowerCase().equals("canada"))
+        Flux.generate(synchronousSink -> synchronousSink.next(Util.faker().country().name())) // infinite generation
+                .map(Object::toString) // Because generate emits Object
+                .handle((theCountry, synchronousSink) -> {
+                    synchronousSink.next(theCountry); // adding only once (not inside a loop)
+                    if (theCountry.equalsIgnoreCase("India"))
                         synchronousSink.complete();
                 })
                 .subscribe(Util.subscriber());

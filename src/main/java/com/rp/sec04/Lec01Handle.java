@@ -4,19 +4,17 @@ import com.rp.util.Util;
 import reactor.core.publisher.Flux;
 
 public class Lec01Handle {
-
     public static void main(String[] args) {
 
-        // handle = filter + map
         Flux.range(1, 20)
-                .handle((integer, synchronousSink) -> {
-                    if(integer == 7)
+                .handle((number, synchronousSink) -> { // synchronousSink can only next()/add one item
+                    if (number == 7) {
                         synchronousSink.complete();
-                    else
-                        synchronousSink.next(integer);
+                    } else {
+                        synchronousSink.next(number);
+                        // cannot do another emit/next() here
+                    }
                 })
                 .subscribe(Util.subscriber());
-
     }
-
 }

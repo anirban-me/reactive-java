@@ -12,7 +12,7 @@ public class Lec01FluxCreate {
                     String country;
                     do {
                         country = Util.faker().country().name();
-                        fluxSink.next(country);
+                        fluxSink.next(country); // multiple emits as it is inside the loop
                     } while (!country.equalsIgnoreCase("India"));
                     fluxSink.complete();
                 })
