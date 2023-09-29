@@ -1,7 +1,7 @@
-package com.rp.sec03;
+package com.rp.fluxCreateGenerate;
 
 import com.rp.util.Util;
-import com.rp.sec03.assignment.FileReaderService;
+import com.rp.fluxCreateGenerate.assignment.FileReaderService;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -16,16 +16,12 @@ public class Lec09FileReaderServiceAssignment {
         readerService.read(path)
                 .map(s -> {
                     Integer integer = Util.faker().random().nextInt(0, 10);
-                    if(integer > 8)
+                    if (integer > 8)
                         throw new RuntimeException("oops");
                     return s;
                 })
                 .take(20)
                 .subscribe(Util.subscriber());
-
-
-
-
 
 
     }

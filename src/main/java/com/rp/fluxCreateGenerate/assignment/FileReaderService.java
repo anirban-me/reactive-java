@@ -1,4 +1,4 @@
-package com.rp.sec03.assignment;
+package com.rp.fluxCreateGenerate.assignment;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.SynchronousSink;
