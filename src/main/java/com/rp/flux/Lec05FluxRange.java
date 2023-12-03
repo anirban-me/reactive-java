@@ -8,7 +8,7 @@ public class Lec05FluxRange {
 
         Flux.range(3, 10)
                 //.log() // used for debugging -- shows output of Flux.range stepwise
-                .map(i -> Util.faker().name().fullName())
+                .map(i -> i + ": " + Util.faker().name().fullName())
                 //.log() // shows output of map(...) stepwise
                 .subscribe(
                         Util.onNext(),

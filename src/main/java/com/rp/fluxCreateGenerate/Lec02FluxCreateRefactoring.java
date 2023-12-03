@@ -6,7 +6,6 @@ import reactor.core.publisher.Flux;
 
 public class Lec02FluxCreateRefactoring {
     // Emit items using multiple threads - use flux sink
-
     public static void main(String[] args) {
 
         NameProducerFluxSink nameProducerFluxSink = new NameProducerFluxSink();
